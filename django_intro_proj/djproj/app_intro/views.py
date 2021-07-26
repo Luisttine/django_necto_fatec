@@ -17,9 +17,9 @@ def print_reqs(request):
     print (request.POST)
     print ("\n-------REQUEST GET--------------\n")
     print (request.GET)
-return HttpResponse('olá mundo')
+    return HttpResponse('olá mundo')
 
 def index(request):
     template_name = 'teste.html'
 
-return render(resquest, template_name)
+    return render(resquest, template_name)
