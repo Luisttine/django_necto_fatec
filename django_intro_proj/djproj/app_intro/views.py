@@ -1,4 +1,7 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
+from django.template import loader
+from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -20,6 +23,6 @@ def print_reqs(request):
     return HttpResponse('olá mundo')
 
 def index(request):
-    template_name = 'app_intro/teste.html'
-
-    return render('resquest', template_name, content_type='application/xhtml+xml')
+    t = loader.get_template('template/teste.html')
+    c = {'foo': 'bar'}
+    return HttpResponse(t.render(c, request), content_type='application/xhtml+xml')
