@@ -20,6 +20,6 @@ def print_reqs(request):
     return HttpResponse('olá mundo')
 
 def index(request):
-    template_name = 'teste.html'
+    template_name = 'app_intro/teste.html'
 
-    return render(resquest, template_name)
+    return render('resquest', template_name, content_type='application/xhtml+xml')
